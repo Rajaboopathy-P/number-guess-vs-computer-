@@ -2,16 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const humanInput = document.getElementById('human');
     const computerInput = document.getElementById('computer');
     const resultEl = document.getElementById('result');
-    const targetEl = document.getElementById('target').querySelector('span');
-    const roundsEl = document.getElementById('rounds');
-    const playerScoreEl = document.getElementById('playerScore');
-    const computerScoreEl = document.getElementById('computerScor
-    const historyList = document.getElementById('history');
-    const difficultySel = document.getElementById('difficulty');
-
-    let min =*
-    let computerScore = 0;
-
+    const targetEl = doc
     function setDifficulty() {
         const d = difficultySel.value;
         max = d === 'easy' ? 10 : d === 'hard' ? 50 : 20;
