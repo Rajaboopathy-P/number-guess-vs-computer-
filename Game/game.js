@@ -1,7 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
-    c
-        const humanVal = Number(humanInput.value);
-        if (!humanInput.value || isNaN(humanVal) || humanVal < min || humanVal > max) {
+
             alert(`Enter a number between ${min} and ${max}`);
             return;
         }
