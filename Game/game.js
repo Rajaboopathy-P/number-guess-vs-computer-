@@ -1,5 +1,4 @@
 
-
     setDifficulty();
     updateUI('Ready');
 });
