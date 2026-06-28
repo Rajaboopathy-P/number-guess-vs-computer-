@@ -1,12 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const humanInput = document.getElementById('human');
-    const computerInput = document.getElementById('computer');
-    const resML = '';
-        targetEl.textContent = '?';
-        updateUI('Game reset');
-    }
-
-    function playRound() {
+    c
         const humanVal = Number(humanInput.value);
         if (!humanInput.value || isNaN(humanVal) || humanVal < min || humanVal > max) {
             alert(`Enter a number between ${min} and ${max}`);
