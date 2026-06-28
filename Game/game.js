@@ -2,17 +2,6 @@
             alert(`Enter a number between ${min} and ${max}`);
             return;
         }
-
-        const target = randInt(min, max);
-        const computerGuess = randInt(min, max);
-        const dPlayer = Math.abs(target - humanVal);
-        const dComputer = Math.abs(target - computerGuess);
-
-        computerInput.value = computerGuess;
-        targetEl.textContent = target;
-
-        let roundResult = 'Tie';
-        if (dPlayer < dComputer) {
             roundResult = 'You win';
             playerScore += 1;
         } else if (dPlayer > dComputer) {
