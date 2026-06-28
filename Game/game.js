@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const historyList = document.getElementById('history');
     const difficultySel = document.getElementById('difficulty');
 
-    let min = 1;
+    let min =
+        
     let max = 20;
     let rounds = 0;
     let playerScore = 0;
