@@ -5,10 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateUI(message) {
         resultEl.textContent = message;
-        roundsEl.textContent = rounds;
-        playerScoreEl.textContent = playerScore;
-        computerScoreEl.textContent = computerScore;
-    }
+        roundsE
 
     function resetGame() {
         rounds = 0;
