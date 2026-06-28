@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const targetEl = document.getElementById('target').querySelector('span');
     const roundsEl = document.getElementById('rounds');
     const playerScoreEl = document.getElementById('playerScore');
-    const computerScoreEl = document.getElementById('computerScore');
+    const computerScoreEl = document.getElementById('computerScor
     const historyList = document.getElementById('history');
     const difficultySel = document.getElementById('difficulty');
 
