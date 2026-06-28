@@ -1,15 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const humanInput = document.getElementById('human');
     const computerInput = document.getElementById('computer');
-    const resultEl = docum
-
-    function updateUI(message) {
-        resultEl.textContent = message;
-        roundsE
-
-    function resetGame() {
-        rounds = 0;
-        playerScore = 0;
+    const res
         computerScore = 0;
         humanInput.value = '';
         computerInput.value = '';
