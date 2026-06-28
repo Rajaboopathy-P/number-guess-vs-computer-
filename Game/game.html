@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game</title>
+    <link rel="stylesheet" href="../bootstrap-5.3.7-dist/css/bootstrap.min.css">
+</head>
+
+<style>
+    :root{
+        --bg-start: #e6f7ff; --bg-end: #f6fbfb;
+        --card-bg-start: rgba(255,255,255,0.9);
+        --card-bg-end: rgba(246,255,250,0.6);
+        --card-accent: #2fbf8f;
+        --btn-start: #4ac29a;
+        --btn-end: #1fa2a6;
+        --text-color: #0b2b26;
+        --muted-color: #6c757d;
+        --history-bg: transparent;
+        --history-text: inherit;
+        --history-hover-bg: #f1f7f7;
+    }
+
+    body { background: linear-gradient(135deg, var(--bg-start), var(--bg-end)); min-height:100vh; }
+    .game-card { max-width: 640px; margin: 48px auto; }
+    .game-card .card-body { padding: 1.25rem; background: linear-gradient(180deg,var(--card-bg-start),var(--card-bg-end)); border-radius:12px; box-shadow: 0 8px 30px rgba(14,30,37,0.08); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.6); color: var(--text-color); }
+    .guess-input { width: 120px; transition: box-shadow .15s ease, transform .12s ease; }
+    .small-muted { font-size: 0.9rem; color: var(--muted-color); }
+    #history { max-height: 140px; overflow:auto; }
+
+    /* Hover and focus styles */
+    .btn { transition: transform .12s ease, box-shadow .12s ease; }
+    .btn-primary { background: linear-gradient(90deg,var(--btn-start),var(--btn-end)); border: none; }
+    .btn-primary:hover { filter: brightness(1.03); }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
+    .list-group-item { background: var(--history-bg); color: var(--history-text); transition: background .12s ease; }
+    .list-group-item:hover { background: var(--history-hover-bg); cursor: pointer; }
+    input:focus, select:focus, button:focus { box-shadow: 0 0 0 0.15rem rgba(13,110,253,0.15); outline: none; }
+
+    /* Responsive adjustments */
+    @media (max-width: 576px) {
+        .game-card { margin: 18px; }
+        .guess-input { width: 100% !important; }
+        .d-flex.gap-2 { flex-direction: column; }
+        .row.g-3.align-items-center > .col-auto { width: 100%; }
+    }
+</style>
+
+<body>
+    <div class="card game-card shadow-sm">
+        <div class="card-body">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+                <h4 class="card-title mb-0">Number Guess: You vs Computer</h4>
+            </div>
+            <div class="row g-3 align-items-center mb-2">
+                <div class="col-auto">
+                    <label for="difficulty" class="col-form-label small-muted">Difficulty</label>
+                    <select id="difficulty" class="form-select">
+                        <option value="easy">Easy (1-10)</option>
+                        <option value="normal" selected>Normal (1-20)</option>
+                        <option value="hard">Hard (1-50)</option>
+                    </select>
+                </div>
+                <div class="col-auto">
+                    <label for="human" class="col-form-label small-muted">Your guess</label>
+                    <input type="number" id="human" class="form-control guess-input" placeholder="1-20">
+                </div>
+                <div class="col-auto">
+                    <label class="col-form-label small-muted">Computer</label>
+                    <input type="text" id="computer" class="form-control guess-input" readonly>
+                </div>
+            </div>
+
+            <div class="d-flex gap-2 mb-3">
+                <button id="playBtn" class="btn btn-primary">Play</button>
+                <button id="resetBtn" class="btn btn-outline-secondary">Reset</button>
+            </div>
+
+            <div class="mb-2">
+                <div id="result" role="status" aria-live="polite" class="fs-5 fw-semibold">Make a guess and press Play</div>
+                <div id="target" class="small-muted">Target: <span class="fw-bold">?</span></div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-sm-4">
+                    <div class="small-muted">Rounds</div>
+                    <div id="rounds">0</div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="small-muted">You</div>
+                    <div id="playerScore">0</div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="small-muted">Computer</div>
+                    <div id="computerScore">0</div>
+                </div>
+            </div>
+
+            <hr />
+            <h6 class="card-subtitle mb-2 text-muted">History</h6>
+            <ul id="history" class="list-group list-group-flush"></ul>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+
+</html>
