@@ -1,19 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const humanInput = document.getElementById('human');
     const computerInput = document.getElementById('computer');
-    const resultEl = document.getElementById('result');
-    const targetEl = doc
-    function setDifficulty() {
-        const d = difficultySel.value;
-        max = d === 'easy' ? 10 : d === 'hard' ? 50 : 20;
-        humanInput.placeholder = `${min}-${max}`;
-        humanInput.min = min;
-        humanInput.max = max;
-    }
-
-    function randInt(a, b) {
-        return Math.floor(Math.random() * (b - a + 1)) + a;
-    }
+    const resultEl = docum
 
     function updateUI(message) {
         resultEl.textContent = message;
