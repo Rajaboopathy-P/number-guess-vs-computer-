@@ -1,11 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const humanInput = document.getElementById('human');
     const computerInput = document.getElementById('computer');
-    const res
-        computerScore = 0;
-        humanInput.value = '';
-        computerInput.value = '';
-        historyList.innerHTML = '';
+    const resML = '';
         targetEl.textContent = '?';
         updateUI('Game reset');
     }
