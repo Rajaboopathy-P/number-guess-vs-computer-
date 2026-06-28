@@ -1,3 +1,3 @@
 
  setDifficulty(
-    updateUI('Ready');
+    updateUI('Re
